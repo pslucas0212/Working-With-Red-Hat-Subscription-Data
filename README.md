@@ -38,6 +38,7 @@ Newer releases of the CRHC-cli tool no longer support password authentication, a
 
 #### Creating your access token:
 * Login to your portal account here to create the token: [https://console.redhat.com/openshift/token](https://console.redhat.com/openshift/token)
+![Red Hat Cloud Console Login](/images/AccessToken01.jpg)
 * Click on the "Load Token" button
 * Copy your new token and save it to a safe place. It will be required to connect to the [cloud.redhat.com](cloud.redhat.com) API interface. I put my token into Lastpass for safe retrieval.
   * NOTE: This token must be secured and should not be shared. It is basically a password replacement that will connect you to the API interface for your Red Hat portal account.
