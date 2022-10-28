@@ -39,8 +39,14 @@ Newer releases of the CRHC-cli tool no longer support password authentication, a
 #### Creating your access token:
 * Login to your portal account here to create the token: [https://console.redhat.com/openshift/token](https://console.redhat.com/openshift/token)
 ![Red Hat Cloud Console Login](/images/AccessToken01.jpg)
+* In the Red Hat Hybrid Cloud Conosle, click on OpenShift on naviagation bar.
+![Click OpenShift](/images/AccessToken02.jpg)
+* On the naviagtion bar click on Downloads.  Scroll to the Tokens section and clock on the View API Token button.
+![Click View API Token](/images/AccessToken03.jpg)
 * Click on the "Load Token" button
+![Click Load token button](/images/AccessToken04.jpg)
 * Copy your new token and save it to a safe place. It will be required to connect to the [cloud.redhat.com](cloud.redhat.com) API interface. I put my token into Lastpass for safe retrieval.
+![Copy Token](/images/AccessToken05.jpg)
   * NOTE: This token must be secured and should not be shared. It is basically a password replacement that will connect you to the API interface for your Red Hat portal account.
 
 ## 3. Running the crhc.py script to get your data extract
