@@ -2,7 +2,7 @@
 
 This article is written by [Scott Danielson](mailto:sdaniels@redhat.com)
 
-## 1. How to configure the collection tool – CRHC-cli:
+### 1. How to configure the collection tool – CRHC-cli:
 
 ```
 # Git the code!
@@ -28,7 +28,7 @@ $ pip install -r requirements.txt
 # Leave this shell window open as we will return here to run the script after we complete a
 # few more steps.
 ```
- ## 2. Create an Offline Access Token for Authentication
+ ### 2. Create an Offline Access Token for Authentication
 
 Newer releases of the CRHC-cli tool no longer support password authentication, and an offline access token must be used to connect to the portal.  This provides a nicer interface for applications to connect and access the portal programmatically.  The instructions below walk you through the process of creating an offline access token.
 * NOTE:  
@@ -49,7 +49,7 @@ Newer releases of the CRHC-cli tool no longer support password authentication, a
 ![Copy Token](/images/AccessToken05.jpg)
   * NOTE: This token must be secured and should not be shared. It is basically a password replacement that will connect you to the API interface for your Red Hat portal account.
 
-## 3. Running the crhc.py script to get your data extract
+### 3. Running the crhc.py script to get your data extract
 Now, it is time to run the script for the first time.  We are going to return to our shell window to run the crhc.py script using our new access token and get our first data extract from the Red Hat portal.
 
 Return to your shell windows from step 1
@@ -68,13 +68,13 @@ $ time ./crhc.py ts match
 ```
 That is it!  The script is running, and it will extract the data from the portal, and it will also combine two of the data files into a CSV file that we can load into a Google Sheet for viewing.
 
-## 4. What are the output files?
+### 4. What are the output files?
 * ***/tmp/inventory.json*** - this is the raw export from the Insights Inventory page. We will not use this.
 * ***/tmp/swatch.json*** - this is the faw export from the Insights Subscriptions app. We will not use this.
 * ***/tmp/match_inv_sw.csv*** - the crhc.py script combines and flattens the above two files into a CSV file so we can view and process the data. This is our main file that will be used to create our reports.
 * ***/tmp/issue_summary.log*** - this file is also very important to us. Any issues with the data are called out in this file. Duplicate entries and systems that are flagged as Satellite/Capsule/OpenShift servers with no packages installed are found in this file. A common issue that I have seen with many customers are servers that are incorrectly flagged as Satellite or Capsule servers. This can happen if the Satellite or Capsule repos are presented to servers inadvertently. In such cases, the Satellite, Capsule, or Other product certs can get installed on a system, and that system will no longer report as a RHEL server. These issues must be corrected in order to get an accurate count.
 
-## 5. Examining the /tmp/issue_summary.log file for issues
+### 5. Examining the /tmp/issue_summary.log file for issues
 There are several data issues that will be reported in this file.  The big ones are the following:
 1. Wrong Sockets in Inventory
 2. Wrong Sockets in Subscriptions
@@ -86,7 +86,7 @@ There are several data issues that will be reported in this file.  The big ones 
 
 I will only focus on three of the items above.  The two forms of duplicates and the last item, Installed Product with no Installed Packages.  Duplicates can throw off an inventory study since you may have “ghost” systems being reported.  Depending on the number of duplicates your deployment utilization may be off from a small amount to a large amount, so it is worth cleaning this up.  How do such duplicates get created?  They tend to stem from the build/provisioning process.  For example, let's say that a process is started to build a new server and register that server to the portal or Satellite.  Now, let’s imagine that a problem is discovered with the build, and a new build process is initiated without first cleaning up the portal/Satellite registration record.  When the rebuild process is complete and the registration happens again, a new ID for the server will be generated, and the box will now show up as a duplicate.  Same hostname, but two different IDs.  Once registration is complete, a decommissioning process should be followed to unregister the host to prevent duplicates.  I suggest automating such processes with the Ansible Automation Platform!
 
-## 6. /tmp/match_inv_sw.csv
+### 6. /tmp/match_inv_sw.csv
     
 
 
