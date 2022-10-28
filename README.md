@@ -1,6 +1,8 @@
 # Working with Red Hat Subscription Data
 
-## 1.How to configure the collection tool – CRHC-cli:
+This article is written by [Scott Danielson](mailto:sdaniels@redhat.com)
+
+## 1. How to configure the collection tool – CRHC-cli:
 
 ```
 # Git the code!
