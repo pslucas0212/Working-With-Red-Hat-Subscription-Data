@@ -39,3 +39,28 @@ Newer releases of the CRHC-cli tool no longer support password authentication, a
 * Click on the "Load Token" button
 * Copy your new token and save it to a safe place. It will be required to connect to the [cloud.redhat.com](cloud.redhat.com) API interface. I put my token into Lastpass for safe retrieval.
   * NOTE: This token must be secured and should not be shared. It is basically a password replacement that will connect you to the API interface for your Red Hat portal account.
+
+## 3. Running the crhc.py script to get your data extract
+Now, it is time to run the script for the first time.  We are going to return to our shell window to run the crhc.py script using our new access token and get our first data extract from the Red Hat portal.
+
+Return to your shell windows from step 1
+```
+# Login to the portal with crhc.py
+$ ./crhc.py login --token <Put your offline access token string here>
+ 
+# Run the "troubleshoot match" command to get the extract files we need:
+$ time ./crhc.py ts match
+ 
+# I like to time the execution of the above command so I have an idea of the duration. This 
+# command can take a considerable amount of time to run. I have seen execution times from 10 
+# min to 1 hr. Be patient
+ 
+# The output files will be dropped into /tmp
+```
+That is it!  The script is running, and it will extract the data from the portal, and it will also combine two of the data files into a CSV file that we can load into a Google Sheet for viewing.
+
+## 4. What are the output files?
+* **/tmp/inventory.json** - this is the raw export from the Insights Inventory page. We will not use this.
+/tmp/swatch.json - this is the faw export from the Insights Subscriptions app. We will not use this.
+/tmp/match_inv_sw.csv - the crhc.py script combines and flattens the above two files into a CSV file so we can view and process the data. This is our main file that will be used to create our reports.
+/tmp/issue_summary.log - this file is also very important to us. Any issues with the data are called out in this file. Duplicate entries and systems that are flagged as Satellite/Capsule/OpenShift servers with no packages installed are found in this file. A common issue that I have seen with many customers are servers that are incorrectly flagged as Satellite or Capsule servers. This can happen if the Satellite or Capsule repos are presented to servers inadvertently. In such cases, the Satellite, Capsule, or Other product certs can get installed on a system, and that system will no longer report as a RHEL server. These issues must be corrected in order to get an accurate count.
