@@ -87,6 +87,7 @@ There are several data issues that will be reported in this file.  The big ones 
 I will only focus on three of the items above.  The two forms of duplicates and the last item, Installed Product with no Installed Packages.  Duplicates can throw off an inventory study since you may have “ghost” systems being reported.  Depending on the number of duplicates your deployment utilization may be off from a small amount to a large amount, so it is worth cleaning this up.  How do such duplicates get created?  They tend to stem from the build/provisioning process.  For example, let's say that a process is started to build a new server and register that server to the portal or Satellite.  Now, let’s imagine that a problem is discovered with the build, and a new build process is initiated without first cleaning up the portal/Satellite registration record.  When the rebuild process is complete and the registration happens again, a new ID for the server will be generated, and the box will now show up as a duplicate.  Same hostname, but two different IDs.  Once registration is complete, a decommissioning process should be followed to unregister the host to prevent duplicates.  I suggest automating such processes with the Ansible Automation Platform!
 
 ## 6. /tmp/match_inv_sw.csv
+    
 
 
 ### Appendix
