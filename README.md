@@ -90,20 +90,20 @@ I will only focus on three of the items above.  The two forms of duplicates and 
     
 
 ### Miscellaneous
-Follow the steps below If you run into an issue where you need to clear the hosts from the Insights Inventory.
+Follow the steps below If you run into an issue where you need to clear all hosts from the Insights Inventory.
 ![Inventory Page on Red Hat Hybrid Console](/images/API00.jpg)
 * Login into the Red Hat Cloud Console [https://console.redhat.com](https://console.redhat.com)
 * After logging in to the Red Hat Cloud Console, click on the ? icon near your user avatar and from the drop down list choose API Documentation.
 ![API Documentation](/images/API01.jpg)
 * On the API Documentation page, click the Managed Inventory link
 ![Managed Inventory Link](/images/API02.jpg)
-* On the Overview > Inventory we are goint click on the toggle for the Delete /hosts/all API command
+* On the Overview > Inventory page we are going to click on the toggle for the Delete /hosts/all API command
 ![Delete Hosts All API](/images/API03.jpg)
 * In the expanded Delete All Hosts All API section, click the Try It Out button
 ![Try It Out button](/images/API04.jpg)
 * Change the confirm_delete_all boolean to True and click the blue Execute button
 ![Execute](/images/API05.jpg)
-* Scroll down to see the results of running the API.  **Note:** If you are deleting a large number of hosts from Insights, this may take a minute or two t complete.  A 202 response indicates the API command ran successfully
+* After the page updates, scroll down in the Delete Hosts All section to see the results of running the API.  **Note:** If you are deleting a large number of hosts from Insights, the API may take a minute or two to execute.  A 202 response indicates that the API command ran successfully
 ![Results](/images/API06.jpg)
 * Navigate back to the Red Hat Insights Inventory page and you will see that all your servers have been removed.  The page will start repopulating in the next 24 hours.
 ![Inventory page after deleting all hosts](/images/API07.jpg)
