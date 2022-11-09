@@ -101,6 +101,11 @@ Follow the steps below If you run into an issue where you need to clear the host
 ![Delete Hosts All API](/images/API03.jpg)
 * In the expanded Delete All Hosts All API section, click the Try It Out button
 ![Try It Out button](/images/API04.jpg)
+* Change the confirm_delete_all boolean to True and click the blue Execute button
+![Execute](/images/API05.jpg)
+* Scroll down to see the results of running the API.  **Note:** If you are deleting a large number of hosts from Insights, this may take a minute or two t complete.
+![Results](/images/API06.jpg)
+
 
 ### Appendix
 [How to Export Your Data from console.redhat.com, using crhc-cli](https://access.redhat.com/articles/6365831)
