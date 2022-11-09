@@ -89,6 +89,9 @@ I will only focus on three of the items above.  The two forms of duplicates and 
 ### 6. /tmp/match_inv_sw.csv
     
 
+### Miscellaneous
+Follow the steps below If you run into an issue where you need to clear the hosts from the Insights Inventory.
+
 
 ### Appendix
 [How to Export Your Data from console.redhat.com, using crhc-cli](https://access.redhat.com/articles/6365831)
