@@ -91,7 +91,11 @@ I will only focus on three of the items above.  The two forms of duplicates and 
 
 ### Miscellaneous
 Follow the steps below If you run into an issue where you need to clear the hosts from the Insights Inventory.
-
+* Login into the Red Hat Cloud Console [https://console.redhat.com](https://console.redhat.com)
+* After logging in to the Red Hat Cloud Console, click on the ? icon near your user avatar and from the drop down list choose API Documentation.
+![API Documentation](/images/API01.jpg)
+* On the API Documentation page, click the Managed Inventory link
+![Mandaged Inventory Link](/images/API02.jpg)
 
 ### Appendix
 [How to Export Your Data from console.redhat.com, using crhc-cli](https://access.redhat.com/articles/6365831)
