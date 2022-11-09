@@ -103,8 +103,10 @@ Follow the steps below If you run into an issue where you need to clear the host
 ![Try It Out button](/images/API04.jpg)
 * Change the confirm_delete_all boolean to True and click the blue Execute button
 ![Execute](/images/API05.jpg)
-* Scroll down to see the results of running the API.  **Note:** If you are deleting a large number of hosts from Insights, this may take a minute or two t complete.
+* Scroll down to see the results of running the API.  **Note:** If you are deleting a large number of hosts from Insights, this may take a minute or two t complete.  A 202 response indicates the API command ran successfully
 ![Results](/images/API06.jpg)
+* Navigate back to the Red Hat Insights Inventory page and you will see that all your servers have been removed.  The page will start repopulating in the next 24 hours.
+![Inventory page after deleting all hosts](/images/API07.jpg)
 
 
 ### Appendix
