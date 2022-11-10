@@ -112,6 +112,8 @@ Follow the steps below If you run into an issue where you need to clear all host
 ### Appendix
 [How to Export Your Data from console.redhat.com, using crhc-cli](https://access.redhat.com/articles/6365831)
 
+[Getting started with Red Hat APIs](https://access.redhat.com/articles/3626371)
+
 GitHub location for the software: [https://github.com/C-RH-C/crhc-cli](https://github.com/C-RH-C/crhc-cli)
 
 Site to create an Offline Access Token: [Red Hat Hybrid Cloud Console](https://console.redhat.com/openshift/token)
